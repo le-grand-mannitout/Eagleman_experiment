@@ -10,7 +10,8 @@ The default settings are : 100ms at beggining, 40ms after 10 try.
 
 ### Required
 
-- Python 3
+* Python 3
+* [`curses`](https://docs.python.org/3/library/curses.html) module (available on **UNIX** system by default).
 
 ### Launch and configure
 
@@ -18,6 +19,8 @@ You can launch main.py to test the experiment :
     `python3 main.py`
     
 You can configure the experiment parameters in the config.py file.
+
+Buttons to display the flash are : A, SPACE and ENTER
 
 ### Coded with
 

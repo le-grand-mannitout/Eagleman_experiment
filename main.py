@@ -4,6 +4,9 @@ from config import Config
 import curses
 import time
 
+KEY_A = 97
+KEY_ENTER = 10
+KEY_SPACE = 32
 
 def main_menu(stdscr,
               reaction_time: float,
@@ -22,7 +25,7 @@ def main_menu(stdscr,
     while (k != ord('q')):
         stdscr.bkgd(" ", curses.color_pair(1))
 
-        if k == 97:
+        if k in (KEY_A, KEY_ENTER, KEY_SPACE):
             time.sleep(reaction_time)
 
             nb_tries = flash(stdscr, nb_tries)
