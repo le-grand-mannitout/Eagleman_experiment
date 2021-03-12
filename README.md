@@ -1,8 +1,8 @@
 # An Eagleman experiment
 
-###What is this Eagleman experiment ?
+### What is this Eagleman experiment ?
 
-David Eagleman is a neuroscientist that is know for his works in subjects such as time perception.
+David Eagleman is a neuroscientist that is known for his works in subjects such as time perception.
 
 Here is the experiment that this project allows you to test : [Eagleman experiment](https://youtu.be/L_ulCRdLUzo?t=773).
 
@@ -25,4 +25,4 @@ You can configure the experiment parameters in the config.py file.
 
 ### License
 
-This project is under ``GNU GPL2`` - see [LICENSE](LICENSE)
+This project is under ``GNU GPL2`` - see [LICENCE](LICENCE)
