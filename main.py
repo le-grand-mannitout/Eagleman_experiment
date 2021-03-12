@@ -1,9 +1,14 @@
 
+from config import Config
+
 import curses
 import time
 
 
-def main_menu(stdscr, reaction_time, variation, nb_tries_bf_change):
+def main_menu(stdscr,
+              reaction_time: float,
+              variation: float,
+              nb_tries_bf_change : int):
     """
         Main curses menu that gets user input
     """
@@ -30,7 +35,8 @@ def main_menu(stdscr, reaction_time, variation, nb_tries_bf_change):
         k = stdscr.getch()
 
 
-def flash(stdscr, nb_tries):
+def flash(stdscr,
+          nb_tries: int) -> int:
     """
         White flash appears on screen
     """
@@ -42,7 +48,10 @@ def flash(stdscr, nb_tries):
     return (nb_tries + 1)
 
 
-def limit_tries(nb_tries_bf_change, reaction_time, nb_tries, variation):
+def limit_tries(nb_tries_bf_change: int,
+                reaction_time: float,
+                nb_tries: int, 
+                variation: float) -> float:
     """
         Determine if limit of first time sequence is reach and
         adapt reaction time if this is the case
@@ -54,7 +63,10 @@ def limit_tries(nb_tries_bf_change, reaction_time, nb_tries, variation):
 
 
 def main():
-    curses.wrapper(main_menu, 0.1, 0.05, 5)
+    curses.wrapper(main_menu,
+                   Config.reaction_time,
+                   Config.variation,
+                   Config.nb_tries_bf_change)
 
 
 if __name__ == "__main__":
