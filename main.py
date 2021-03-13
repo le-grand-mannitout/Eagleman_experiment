@@ -8,13 +8,15 @@ KEY_A = 97
 KEY_ENTER = 10
 KEY_SPACE = 32
 
+
 def main_menu(stdscr,
               reaction_time: float,
               variation: float,
-              nb_tries_bf_change : int):
+              nb_tries_bf_change: int):
     """
         Main curses menu that gets user input
     """
+    curses.curs_set(0)
     k = 0
     nb_tries = 0
 
@@ -53,7 +55,7 @@ def flash(stdscr,
 
 def limit_tries(nb_tries_bf_change: int,
                 reaction_time: float,
-                nb_tries: int, 
+                nb_tries: int,
                 variation: float) -> float:
     """
         Determine if limit of first time sequence is reach and
