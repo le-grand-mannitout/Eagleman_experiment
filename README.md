@@ -6,7 +6,7 @@ David Eagleman is a neuroscientist that is known for his works in subjects such 
 
 Here is the experiment that this project allows you to test : [Eagleman experiment](https://youtu.be/L_ulCRdLUzo?t=773).
 
-The default settings are : 100ms at beggining, 40ms after 10 try.
+The default settings are : 100ms at beggining, 40ms after 10 try and with a flash of 0.1s.
 
 ### Required
 

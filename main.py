@@ -30,7 +30,7 @@ def main_menu(stdscr,
         if k in (KEY_A, KEY_ENTER, KEY_SPACE):
             time.sleep(reaction_time)
 
-            nb_tries = flash(stdscr, nb_tries)
+            nb_tries = flash(stdscr, nb_tries, Config.flash_time)
             reaction_time = limit_tries(nb_tries_bf_change,
                                         reaction_time,
                                         nb_tries, variation)
@@ -41,13 +41,14 @@ def main_menu(stdscr,
 
 
 def flash(stdscr,
-          nb_tries: int) -> int:
+          nb_tries: int,
+          flash_time: float) -> int:
     """
         White flash appears on screen
     """
     stdscr.bkgd(" ", curses.color_pair(2))
     stdscr.refresh()
-    time.sleep(1)
+    time.sleep(flash_time)
     stdscr.bkgd(" ", curses.color_pair(1))
 
     return (nb_tries + 1)
