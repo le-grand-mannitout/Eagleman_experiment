@@ -1,13 +1,13 @@
 
-from config import Config
-
 import curses
 import time
+
+from config import Config
+
 
 KEY_A = 97
 KEY_ENTER = 10
 KEY_SPACE = 32
-
 
 def main_menu(stdscr,
               reaction_time: float,
@@ -20,11 +20,10 @@ def main_menu(stdscr,
     k = 0
     nb_tries = 0
 
-    curses.start_color()
     curses.init_pair(1, curses.COLOR_WHITE, curses.COLOR_BLACK)
     curses.init_pair(2, curses.COLOR_BLACK, curses.COLOR_WHITE)
 
-    while (k != ord('q')):
+    while k != ord("q"):
         stdscr.bkgd(" ", curses.color_pair(1))
 
         if k in (KEY_A, KEY_ENTER, KEY_SPACE):
@@ -36,7 +35,6 @@ def main_menu(stdscr,
                                         nb_tries, variation)
 
         stdscr.refresh()
-
         k = stdscr.getch()
 
 
@@ -51,7 +49,7 @@ def flash(stdscr,
     time.sleep(flash_time)
     stdscr.bkgd(" ", curses.color_pair(1))
 
-    return (nb_tries + 1)
+    return nb_tries + 1
 
 
 def limit_tries(nb_tries_bf_change: int,
