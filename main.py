@@ -10,9 +10,7 @@ KEY_ENTER = 10
 KEY_SPACE = 32
 
 def main_menu(stdscr, reaction_time: float):
-    """
-        Main curses menu that gets user input
-    """
+    """Main curses menu that gets user input."""
     curses.curs_set(0)
     k = 0
     nb_tries = 0
@@ -34,9 +32,7 @@ def main_menu(stdscr, reaction_time: float):
 
 
 def flash(stdscr, nb_tries: int) -> int:
-    """
-        White flash appears on screen
-    """
+    """White flash appears on screen."""
     stdscr.bkgd(" ", curses.color_pair(2))
     stdscr.refresh()
     time.sleep(Config.flash_time)
@@ -46,9 +42,8 @@ def flash(stdscr, nb_tries: int) -> int:
 
 
 def limit_tries(nb_tries: int, reaction_time: float) -> float:
-    """
-        Determine if limit of first time sequence is reach and
-        adapt reaction time if this is the case
+    """Determine if limit of first time sequence is reach and
+    adapt reaction time if this is the case.
     """
     if nb_tries == Config.nb_tries_bf_change:
         reaction_time -= Config.variation
